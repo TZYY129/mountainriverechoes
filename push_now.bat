@@ -14,6 +14,8 @@ echo.
 echo  repo   : https://github.com/TZYY129/mountainriverechoes
 echo  branch : master
 echo.
+echo  A GitHub sign-in window will open. Just sign in and approve.
+echo  No token or password needed.
 echo  First push uploads about 30 MB, please wait.
 echo.
 
@@ -30,20 +32,17 @@ echo [ok]    changes committed
 :do_push
 echo.
 echo ----------------------------------------------------------------
-echo  git will now ask for credentials:
-echo      Username :  TZYY129
-echo      Password :  paste your GitHub token (starts with ghp_) then press Enter
-echo  Nothing appears while typing the password - that is normal.
+echo  Connecting to GitHub - a sign-in window should appear now...
 echo ----------------------------------------------------------------
 echo.
 
-git config credential.helper store
-git push -u origin master
+git push -u origin master --progress
 if errorlevel 1 goto push_failed
 
 echo.
 echo ================================================================
-echo  [OK]  Pushed successfully. Credentials saved.
+echo  [OK]  Pushed successfully.
+echo  Credentials saved - future auto backups can push silently.
 echo ================================================================
 goto end
 
@@ -51,9 +50,11 @@ goto end
 echo.
 echo ================================================================
 echo  [FAILED]  Push did not complete. Read the message above.
-echo  Check: token correct and starts with ghp_ ?
-echo         token has "repo" scope ?
-echo         network can reach github.com ?
+echo.
+echo  Common reasons:
+echo    - the sign-in window was closed or cancelled
+echo    - cannot reach github.com right now (just try again later)
+echo    - no permission on that repository
 echo ================================================================
 
 :end
