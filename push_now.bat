@@ -14,7 +14,7 @@ echo.
 echo  repo   : https://github.com/TZYY129/mountainriverechoes
 echo  branch : master
 echo.
-echo  (first push uploads about 30 MB of data, please wait)
+echo  First push uploads about 30 MB, please wait.
 echo.
 
 git add -A
@@ -25,31 +25,25 @@ goto do_push
 
 :do_commit
 git commit -m "chore: manual backup" -q
-if errorlevel 1 (
-  echo [warn]  commit failed
-) else (
-  echo [ok]    changes committed
-)
+echo [ok]    changes committed
 
 :do_push
 echo.
 echo ----------------------------------------------------------------
 echo  git will now ask for credentials:
 echo      Username :  TZYY129
-echo      Password :  paste your GitHub token (starts with ghp_) and press Enter
-echo  NOTE: when typing the password nothing appears on screen. That is normal.
+echo      Password :  paste your GitHub token (starts with ghp_) then press Enter
+echo  Nothing appears while typing the password - that is normal.
 echo ----------------------------------------------------------------
 echo.
 
 git config credential.helper store
 git push -u origin master
-
 if errorlevel 1 goto push_failed
 
 echo.
 echo ================================================================
-echo  [OK]  Pushed successfully.
-echo  Credentials saved - next time it will not ask again.
+echo  [OK]  Pushed successfully. Credentials saved.
 echo ================================================================
 goto end
 
@@ -57,11 +51,9 @@ goto end
 echo.
 echo ================================================================
 echo  [FAILED]  Push did not complete. Read the message above.
-echo.
-echo  Common reasons:
-echo    - token copied wrongly (should start with ghp_ and be one line)
-echo    - no network access to github.com
-echo    - token missing the "repo" scope
+echo  Check: token correct and starts with ghp_ ?
+echo         token has "repo" scope ?
+echo         network can reach github.com ?
 echo ================================================================
 
 :end

@@ -8,8 +8,7 @@ set "PROJ=C:\Users\20318\WorkBuddy\2026-10-09-20-30-45\mountainriverechoes"
 cd /d "%PROJ%"
 
 echo ================================================================
-echo   Auto backup  ^|  mountainriverechoes
-echo   %date% %time%
+echo   Auto backup  -  mountainriverechoes
 echo ================================================================
 echo.
 
@@ -21,20 +20,24 @@ goto try_push
 
 :do_commit
 git commit -m "chore: auto backup" -q
-if errorlevel 1 (
-  echo [warn]  commit failed
-) else (
-  echo [ok]    changes committed
-)
+if errorlevel 1 goto commit_failed
+echo [ok]    changes committed
+goto try_push
+
+:commit_failed
+echo [warn]  commit failed
 
 :try_push
 set GIT_TERMINAL_PROMPT=0
 git push origin master >nul 2>&1
-if errorlevel 1 (
-  echo [note]  cannot reach GitHub now - local backup is saved
-) else (
-  echo [ok]    pushed to GitHub
-)
+if errorlevel 1 goto push_skip
+echo [ok]    pushed to GitHub
+goto done
+
+:push_skip
+echo [note]  cannot reach GitHub right now - local backup is saved
+
+:done
 echo.
 echo Done.
 exit /b 0
