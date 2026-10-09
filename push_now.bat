@@ -42,7 +42,7 @@ echo ----------------------------------------------------------------
 echo   Connecting to GitHub - a sign-in code will appear below
 echo ----------------------------------------------------------------
 echo.
-echo   >>> COPY the code shown below, then open: https://github.com/login/device
+echo   COPY the code shown below, then open this page: https://github.com/login/device
 echo.
 git ls-remote --heads origin
 if errorlevel 1 goto auth_failed
