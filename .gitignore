@@ -1,0 +1,33 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+venv/
+.venv/
+env/
+
+# 运行产物与日志
+*.log
+*.pid
+_server.log
+*.tmp
+
+# 凭证（绝不入库）
+.git-credentials
+*.token
+.env
+
+# 系统与编辑器
+Thumbs.db
+Desktop.ini
+.DS_Store
+.vscode/
+.idea/
+
+# 打包产物
+build/
+dist/
+*.spec
+
+# 图标预览（保留 .ico 本体）
+mountain_echo_preview.png
