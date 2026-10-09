@@ -37,8 +37,19 @@ echo ----------------------------------------------------------------
 echo.
 
 git push -u origin master --progress
-if errorlevel 1 goto push_failed
+if errorlevel 1 goto force_push
+goto push_ok
 
+:force_push
+echo.
+echo [note]  Remote already has other commits (your fork came with history).
+echo         Replacing it with your local backup...
+echo.
+git push --force -u origin master --progress
+if errorlevel 1 goto push_failed
+goto push_ok
+
+:push_ok
 echo.
 echo ================================================================
 echo  [OK]  Pushed successfully.
