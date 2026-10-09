@@ -3,7 +3,7 @@ chcp 65001 >nul
 title MountainRiverEchoes - Auto Backup
 
 set "GIT_ROOT=C:\Users\20318\.workbuddy\binaries\git\versions\mingit-v2.56.0.windows.2"
-set "PATH=%GIT_ROOT%\cmd;%GIT_ROOT%\mingw64\bin;%PATH%"
+set "PATH=%GIT_ROOT%\cmd;%GIT_ROOT%\mingw64\bin;%GIT_ROOT%\ucrt64\bin;%PATH%"
 set "PROJ=C:\Users\20318\WorkBuddy\2026-10-09-20-30-45\mountainriverechoes"
 cd /d "%PROJ%"
 
