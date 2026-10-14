@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>山河回响 听见56个民族的音乐</title>
+<title>山河回响 · 维吾尔族｜十二木卡姆典藏</title>
 <style>
 /* ================= 基础 ================= */
 :root{
@@ -592,6 +592,70 @@ tr:hover .td-act{opacity:1}
 .hero,.ethnos-hero{border-radius:18px}
 .hero h2,.ethnos-hero h2{letter-spacing:.5px}
 .hero .hot span{border-radius:15px;backdrop-filter:blur(2px)}
+/* ============================================================
+   维吾尔族专属主题 · 十二木卡姆（AI 与社会科学 · 课程作业）
+   设计元素：艾德莱斯绸纹样 / 石榴红 / 孔雀绿 / 木卡姆徽章
+   ============================================================ */
+:root{
+  --red:#c8102e; --red-deep:#8f0b20;
+  --red-grad:linear-gradient(135deg,#e0404f,#a8081f);
+  --bg:#f4f0e7; --side:#faf6ee; --side-hover:#f2ece1; --side-active:#ece2d1;
+  --txt:#212529; --txt2:#5b6169; --txt3:#9aa0ab; --line:#ebe3d5; --row-hover:#f9f5ec;
+  --gold-grad:linear-gradient(135deg,#f6d365,#c9971f);
+  --radius:14px;
+  --focus:0 0 0 3px rgba(200,16,46,.22);
+  --atlas-1:#0d5c63; --atlas-2:#1b8b93; --atlas-3:#c8102e; --atlas-4:#d4a017; --atlas-5:#6d214f;
+  --atlas:repeating-linear-gradient(100deg,
+    var(--atlas-1) 0 26px,var(--atlas-2) 26px 40px,var(--atlas-3) 40px 54px,
+    var(--atlas-4) 54px 68px,var(--atlas-5) 68px 84px);
+}
+/* —— 顶部艾德莱斯绸飘带 —— */
+#app::before{content:'';position:absolute;top:0;left:0;right:0;height:5px;z-index:80;
+  background:var(--atlas);background-size:240px 100%;animation:atlasRun 22s linear infinite}
+@keyframes atlasRun{from{background-position:0 0}to{background-position:240px 0}}
+/* —— 侧栏细纹底 —— */
+#sidebar{background-image:
+  radial-gradient(circle at 12px 12px,rgba(13,92,99,.055) 1.5px,transparent 1.6px),
+  radial-gradient(circle at 30px 30px,rgba(200,16,46,.05) 1.5px,transparent 1.6px);
+  background-size:36px 36px}
+.logo-icon{background:var(--atlas);background-size:200% 200%;border-radius:10px;
+  box-shadow:0 3px 12px rgba(13,92,99,.38)}
+.logo b{letter-spacing:.3px}
+.logo small{letter-spacing:.4px}
+/* —— 主视觉 Hero：艾德莱斯绸 —— */
+.hero{background-image:
+  linear-gradient(115deg,rgba(11,72,80,.94) 0%,rgba(96,26,68,.90) 52%,rgba(176,12,38,.94) 100%),
+  var(--atlas);
+  border-radius:18px;padding:34px 38px}
+.hero::after{content:'';position:absolute;right:-90px;top:-120px;width:400px;height:400px;border-radius:50%;
+  background:radial-gradient(circle,rgba(246,211,101,.30),transparent 62%)}
+.hero::before{content:'';position:absolute;left:-50px;bottom:-160px;width:340px;height:340px;border-radius:50%;
+  background:radial-gradient(circle,rgba(27,139,147,.34),transparent 65%)}
+.hero h2{font-size:27px;letter-spacing:2.5px;text-shadow:0 2px 16px rgba(0,0,0,.38);position:relative;z-index:1}
+.hero .uyg{display:block;font-size:15.5px;letter-spacing:1px;opacity:.86;margin-bottom:7px;
+  font-weight:400;position:relative;z-index:1;direction:rtl;text-align:left}
+.hero p{opacity:.93;line-height:1.8;max-width:660px;position:relative;z-index:1}
+.hero .hot span{background:rgba(255,255,255,.14);border-color:rgba(255,255,255,.32)}
+/* —— 木卡姆徽章 —— */
+.mk-badges{display:flex;flex-wrap:wrap;gap:9px;margin:16px 0 6px;position:relative;z-index:1}
+.mk-badge{display:inline-flex;align-items:center;gap:7px;padding:6px 15px;border-radius:16px;font-size:12.5px;
+  background:rgba(255,255,255,.13);border:1px solid rgba(255,255,255,.30);color:#fff;
+  backdrop-filter:blur(3px);transition:.18s}
+.mk-badge b{font-weight:700;color:#f6d365;font-size:13px}
+.mk-badge.on{background:rgba(246,211,101,.24);border-color:rgba(246,211,101,.62);
+  box-shadow:0 2px 12px rgba(246,211,101,.28)}
+.mk-badge:hover{background:rgba(255,255,255,.26)}
+/* —— 索引页 Hero —— */
+.ethnos-hero{background-image:
+  linear-gradient(115deg,rgba(11,72,80,.94),rgba(96,26,68,.90) 55%,rgba(176,12,38,.94)),
+  var(--atlas);border-radius:18px}
+.ethnos-hero::after{background:radial-gradient(circle,rgba(246,211,101,.30),transparent 60%)}
+/* —— 卡片圆角与描边 —— */
+.pl-card{border-radius:15px;box-shadow:var(--sh-1)}
+.pl-card.eth-card:hover{box-shadow:var(--sh-3)}
+/* —— 播放栏顶部一条细绸 —— */
+#player::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--atlas);
+  background-size:240px 100%;opacity:.9}
 /* ---- 骨架行: 屏蔽 hover 高亮 ---- */
 .sk-row:hover td{background:transparent}
 .sk-row .td-index .num{opacity:.45}
@@ -653,7 +717,7 @@ tr:hover .td-act{opacity:1}
   <aside id="sidebar">
     <div class="logo">
       <div class="logo-icon"><svg viewBox="0 0 24 24"><use href="#i-note"/></svg></div>
-      <div><b>山河回响</b><small>听见56个民族的音乐</small></div>
+      <div><b>山河回响 · 维吾尔族</b><small>ئۇيغۇر مۇقامى · 木卡姆典藏</small></div>
     </div>
     <nav id="nav">
       <div class="nav-title">在线音乐</div>
@@ -700,8 +764,16 @@ tr:hover .td-act{opacity:1}
       <!-- 发现音乐 -->
       <div class="page" id="page-discover">
         <div class="hero">
-          <h2>在这里，听见全世界</h2>
-          <p>聚合 · 搜索 / 试听 / 歌词 / </p>
+          <span class="uyg">ئۇيغۇر مۇقامى · 十二木卡姆</span>
+          <h2>维吾尔族音乐地图</h2>
+          <p>十二木卡姆 12 套全收录 · 刀郎木卡姆 9 套全收录<br>覆盖木卡姆套曲、达斯坦、麦西来甫、南北疆民歌与器乐曲</p>
+          <div class="mk-badges">
+            <span class="mk-badge on"><b>12</b>十二木卡姆</span>
+            <span class="mk-badge on"><b>9</b>刀郎木卡姆</span>
+            <span class="mk-badge">哈密木卡姆</span>
+            <span class="mk-badge">吐鲁番木卡姆</span>
+            <span class="mk-badge"><b>2293</b>首馆藏</span>
+          </div>
           <div class="hot" id="hot-words"></div>
         </div>
         <div class="sec-title" style="margin-top:26px"><b>排行榜</b><span style="font-size:12px;color:var(--txt3)" id="charts-updated">实时抓取</span></div>
@@ -712,7 +784,7 @@ tr:hover .td-act{opacity:1}
 
       <!-- 民族音乐 -->
       <div class="page" id="page-ethnos">
-        <div class="page-title">民族音乐专区<small>56 个民族歌单 · 点击卡片进入</small></div>
+        <div class="page-title">维吾尔族音乐专区<small>十二木卡姆 · 刀郎木卡姆 · 麦西来甫 · 民歌</small></div>
         <div class="pl-grid" id="ethnos-grid"></div>
       </div>
 
@@ -729,8 +801,8 @@ tr:hover .td-act{opacity:1}
       <div class="page" id="page-index">
         <div class="ethnos-hero">
           <div>
-            <h2>五十六个民族 · 音乐地图</h2>
-            <p>遍历多音源聚合搜索，为 56个少数民族逐一构建民族音乐歌单（民歌 / 特色曲种 / 民族语言歌曲）</p>
+            <h2>维吾尔族 · 十二木卡姆典藏</h2>
+            <p>全库 2293 首：十二木卡姆 12 套（每套 1.5–2.2 小时完整录音）· 刀郎木卡姆 9 套（1997 学术录音版 + 现代录音棚版双版本）· 麦西来甫舞曲 · 达斯坦 · 南北疆民歌与器乐</p>
           </div>
           <div class="ethnos-hero-acts">
             <button class="btn ethnos-btn" id="ethnos-stop" style="display:none">停止构建</button>
@@ -1087,8 +1159,8 @@ async function api(url, opts){ const r = await fetch(url, opts); const d = await
    这些原先只落在 localStorage —— 清缓存或换浏览器就回到出厂样子, 现在同步到服务端 webui/ui_state.json。 */
 const UI_SYNC_KEYS = ['cm_order_ethcards', 'cm_my_playlists', 'cm_pl_removed', 'cm_ethnic_custom', 'cm_cfg_v5'];
 const isSyncKey = k => UI_SYNC_KEYS.includes(k) || /^cm_order_ethrows_/.test(k);
-/* 56 民族卡片默认次序(2026-10-05 由用户自定义固化): 本机无 cm_order_ethcards 时按此排序 */
-const ETHCARD_ORDER_DEFAULT = ['景颇族','佤族','珞巴族','傈僳族','藏族','彝族','傣族','哈尼族','拉祜族','高山族','苗族','壮族','侗族','怒族','纳西族','瑶族','独龙族','门巴族','布朗族','阿昌族','羌族','普米族','基诺族','白族','布依族','德昂族','土家族','水族','维吾尔族','蒙古族','汉族民间小调','回族','哈萨克族','朝鲜族','黎族','俄罗斯族','满族','畲族','塔吉克族','柯尔克孜族','达斡尔族','仫佬族','东乡族','赫哲族','乌孜别克族','裕固族','仡佬族','锡伯族','塔塔尔族','鄂温克族','鄂伦春族','保安族','土族','撒拉族','毛南族','京族'];
+/* 单民族分装版：只保留「维吾尔族」卡片 */
+const ETHCARD_ORDER_DEFAULT = ['维吾尔族'];
 const store = {
   get(k, d){ try { return JSON.parse(localStorage.getItem(k)) ?? d; } catch(e){ return d; } },
   set(k, v){
@@ -2490,7 +2562,7 @@ function bindEthBatch(sel, shownList){
 function renderIndex(){
   if (!(state.ethnos.groups || []).length) loadEthnos();   /* 深链直开索引页时补拉民族状态(徽标/发现页计数) */
   const d = state.index.data;
-  $('#idx-sub').textContent = d ? `${(d.stats || {}).artists || 0} 位歌手 · ${(d.stats || {}).songs || 0} 首歌曲 · ${(d.stats || {}).ethnos_playlists || 56} 个民族歌单` : '';
+  $('#idx-sub').textContent = d ? `${(d.stats || {}).artists || 0} 位歌手 · ${(d.stats || {}).songs || 0} 首歌曲 · 维吾尔族曲库` : '';
   $$('#page-index .stab').forEach(t => {
     const tab = t.dataset.itab;
     t.classList.toggle('on', tab === state.index.tab);
@@ -2598,7 +2670,7 @@ function renderIndex(){
         const gi = ethGrad(g), gs = ethGradSoft(g);
         return `<div class="pl-card eth-card" draggable="true" data-eth="${esc(g)}" title="点击进入 · 拖动调整次序"><div class="cov" style="background:linear-gradient(135deg,${gs[0]},${gs[1]});color:${gi[0]};text-shadow:none">${isHan ? '汉族' : esc(g)}</div><div class="nm">${isHan ? '汉族音乐 · ' + hanCnt + ' 首' : esc(g) + '音乐 · ' + songCnt(g) + ' 首'}</div></div>`;
       };
-      eg.innerHTML = `<div class="pl-grid">${applyOrder([...new Set([...order, '汉族民间小调'])], store.get('cm_order_ethcards', ETHCARD_ORDER_DEFAULT)).map(cardOf).join('')}</div>`;
+      eg.innerHTML = `<div class="pl-grid">${applyOrder([...new Set([...order, '维吾尔族'])], store.get('cm_order_ethcards', ETHCARD_ORDER_DEFAULT)).map(cardOf).join('')}</div>`;
       eg.querySelectorAll('.eth-card[data-eth]').forEach(c => c.onclick = () => {
         state.index.ethnicSel = c.dataset.eth; state.index.ethEdit = false; renderIndex();
       });

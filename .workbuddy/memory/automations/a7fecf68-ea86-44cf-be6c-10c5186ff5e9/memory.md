@@ -18,3 +18,9 @@
 - git push origin master → 失败，exitcode=128：
   `fatal: unable to access ... Recv failure: Connection was reset`（网络原因，本地备份完好）。
 - 结论：本地备份已保存，无新提交，推送未成功。按约定未重试。
+
+### 2026-10-12 08:01
+- 检测到 144 个文件改动（10-11 产生的 musicdl_outputs 搜索缓存、webui ethnos_cache 备份、3 份维吾尔族报告 md）。
+- 新提交 8413c6c "chore: auto backup"，commit_exit=0。
+- git push origin master → 失败，exitcode=128：`Recv failure: Connection was reset`（网络原因，本地备份完好）。
+- 结论：本地备份已保存于提交 8413c6c，推送未成功。按约定未重试。

@@ -31,3 +31,15 @@ dist/
 
 # 图标预览（保留 .ico 本体）
 mountain_echo_preview.png
+
+# 曲库备份与版本归档（体积大且可重建，不入库）
+webui/ethnos_cache/*.bak
+webui/ethnos_cache/*.bak.*
+webui/ethnos_cache/versions/
+
+# 运行时产生的下载与搜索缓存
+downloads/
+musicdl_outputs/
+
+# 本地备份日志
+.workbuddy/backup_log.txt
