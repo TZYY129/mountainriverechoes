@@ -30,3 +30,9 @@
 - 新提交 a2d6c34 "chore: auto backup"，commit_exit=0。
 - git push origin master → 成功：5014aca..a2d6c34 master -> master（本次网络正常）。
 - 结论：备份完成并已推送到 GitHub。
+
+### 2026-10-22 22:31
+- 沿用 PowerShell 原生命令方案（cmd.exe 仍被拦截），输出重定向到临时文件读取。
+- 检测到改动，新提交 29b531d "chore: auto backup"，commit_exit=0。
+- git push origin master → 失败，exitcode=128：`Recv failure: Connection was reset`（网络原因，本地备份完好）。
+- 结论：本地备份已保存于 29b531d，推送未成功。按约定未重试。
