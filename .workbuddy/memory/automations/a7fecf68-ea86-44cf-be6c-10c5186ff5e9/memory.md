@@ -49,6 +49,13 @@
 - git push origin master → 失败，exitcode=128：`Recv failure: Connection was reset`（网络原因）。
 - 结论：本地备份已保存于 179ff08，推送未成功。按约定未重试。
 
+### 2026-11-16 08:06
+- cmd.exe 仍被拦截（Bash 调 `cmd //c auto_backup.bat` 只返回交互式 banner，exit 0 但未执行）。
+- 沿用 PowerShell 原生命令方案；注意 `Out-File -Encoding utf8` 生成 UTF-16/混合编码，Read 工具报 binary，需用 iconv 转码读取。
+- 检测到 1 个文件改动（自动化 memory.md 自身），新提交 a69e94f "chore: auto backup"，commit_exit=0。
+- git push origin master → 失败：`Send failure: Connection was reset`（网络原因）。
+- 本地领先 origin/master 2 个提交（179ff08、a69e94f 均未推送）。按约定未重试。
+
 ### 2026-11-08 22:30
 - 沿用 PowerShell 原生命令方案，输出写入 backup_run.log 读取。
 - 检测到 1 个文件改动（自动化 memory.md 自身），新提交 8907d9b "chore: auto backup"，commit_exit=0。
