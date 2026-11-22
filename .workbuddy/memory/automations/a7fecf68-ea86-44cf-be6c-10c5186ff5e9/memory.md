@@ -56,6 +56,12 @@
 - git push origin master → 失败：`Send failure: Connection was reset`（网络原因）。
 - 本地领先 origin/master 2 个提交（179ff08、a69e94f 均未推送）。按约定未重试。
 
+### 2026-11-21 22:31
+- cmd.exe 仍被拦截，沿用 PowerShell 原生命令方案，输出写入 backup_run.log 读取。
+- 检测到 1 个文件改动（自动化 memory.md 自身），新提交 57034ab "chore: auto backup"，commit_exit=0。
+- git push origin master → 成功：8907d9b..57034ab master -> master（push_exit=0；日志中的 NativeCommandError 仅为 PowerShell 包装 stderr，非错误）。
+- 本次推送同时补齐了此前积压未推送的 179ff08、a69e94f 两个提交，本地与远端现已同步。
+
 ### 2026-11-08 22:30
 - 沿用 PowerShell 原生命令方案，输出写入 backup_run.log 读取。
 - 检测到 1 个文件改动（自动化 memory.md 自身），新提交 8907d9b "chore: auto backup"，commit_exit=0。
