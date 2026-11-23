@@ -62,6 +62,12 @@
 - git push origin master → 成功：8907d9b..57034ab master -> master（push_exit=0；日志中的 NativeCommandError 仅为 PowerShell 包装 stderr，非错误）。
 - 本次推送同时补齐了此前积压未推送的 179ff08、a69e94f 两个提交，本地与远端现已同步。
 
+### 2026-11-22 23:09
+- cmd.exe 仍被拦截，沿用 PowerShell 原生命令方案；日志用 .NET `WriteAllText` + UTF8(no BOM) 写入，Read 可正常读取（无需 iconv）。
+- 检测到 1 个文件改动（自动化 memory.md 自身），新提交 a2eaedf "chore: auto backup"，commit_exit=0。
+- git push origin master → 成功：57034ab..a2eaedf master -> master（push_exit=0）。
+- `git status -sb` 显示 `## master...origin/master`，本地与远端已同步。
+
 ### 2026-11-08 22:30
 - 沿用 PowerShell 原生命令方案，输出写入 backup_run.log 读取。
 - 检测到 1 个文件改动（自动化 memory.md 自身），新提交 8907d9b "chore: auto backup"，commit_exit=0。
